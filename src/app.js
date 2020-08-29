@@ -47,18 +47,6 @@ app.get('/help', (req, res) => {
   });
 });
 
-// app.get('/help', (req, res) => {
-//   res.send({
-//      name: "Abhi", //Express auto detects the arrays, objects or array of object and stringify those to JSON
-//      age: 23
-//   });
-// });
-//
-// app.get('/about', (req, res) => {
-//   res.send('About page!');
-// });
-
-
 app.get('/weather', (req, res) => {
   if(!req.query.address) {
     return res.send({
