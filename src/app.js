@@ -36,15 +36,15 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
   res.render('about', {
-    title: 'About Application',
+    title: 'About',
     name: 'Abhiram'
   });
 });
 
 app.get('/help', (req, res) => {
   res.render('help', {
-    message: 'This might be very helpful for you',
-    title: 'Help Application',
+    message: 'This website is able to get the current weather updates for a provided location',
+    title: 'Help',
     name: 'Abhiram'
   });
 });
@@ -58,13 +58,13 @@ app.get('/weather', (req, res) => {
   geocode(req.query.address, (err, {latitude, longitude, location} = {}) => {
     if(err) {
       return res.send({
-        error: `Unable to fetch weather; ${err}`
+        error: `Unable to fetch weather. ${err}`
       });
     }
     forecast(latitude, longitude, (err, forecastData) => {
       if(err) {
         res.send({
-          error: `Unable to fetch weather; ${err}`
+          error: `Unable to fetch weather. ${err}`
         });
       }
       res.send({

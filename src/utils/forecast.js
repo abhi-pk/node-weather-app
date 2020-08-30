@@ -8,7 +8,7 @@ const forecast = (lat, long, callback) => {
      if(error) {
        callback(`Unable to connect to the weather server. Check your Internet Connection`, undefined);
      } else if(body.error) { //Incorrect input query fields you will get in response
-       callback(`Please specify a valid location identifier using the query parameter.`, undefined);
+       callback(`Please specify a valid location identifier.`, undefined);
      } else {
        callback(undefined, `${body.current.weather_descriptions[0]}. The actual temperature is ${body.current.temperature} and the feel like temperature is ${body.current.feelslike}`);
      }

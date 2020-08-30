@@ -7,7 +7,7 @@ const geoCode = (address, callback) => {
     if(error) {
       callback('Unable to connect to the geolocation server. Check your Internet Connection', undefined);
     } else if (body.features.length === 0) {
-      callback('Please specify a valid location identifier using the query parameter to get the lat and longtiudes.', undefined);
+      callback('Please specify a valid location identifier.', undefined);
     } else {
       callback(undefined, {
         latitude: body.features[0].center[1],
